@@ -86,7 +86,7 @@ namespace GameShareManager.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
+                    ModelState.AddModelError("", Resources.Language.InvalidLoginError);
                     return View(model);
             }
         }
@@ -129,7 +129,7 @@ namespace GameShareManager.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid code.");
+                    ModelState.AddModelError("", Resources.Language.InvalidCodeError);
                     return View(model);
             }
         }

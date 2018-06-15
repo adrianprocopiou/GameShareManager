@@ -117,7 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmar nova senha</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmar senha</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="InvalidCodeError" xml:space="preserve">
+    <value>Código inválido.</value>
+  </data>
+  <data name="InvalidLoginError" xml:space="preserve">
+    <value>Tentiva inválida de login.</value>
+  </data>
+  <data name="MinimumStringLenghtError" xml:space="preserve">
+    <value>O campo {0} precisa ser composto ao menos de {2} caractere(s).</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nova senha</value>
+  </data>
+  <data name="NewPasswordAndConfirmPasswordDontMatchError" xml:space="preserve">
+    <value>A nova seha e a confirmação de senha estão diferentes.</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Senha</value>
+  </data>
+  <data name="PasswordAndConfirmPasswordDontMatchError" xml:space="preserve">
+    <value>A senha e a confirmação de senha estão diferentes.</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Telefone celular</value>
+  </data>
+  <data name="RememberBrowser" xml:space="preserve">
+    <value>Permanecer conectado nesse navegador?</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Manter-me conectado?</value>
+  </data>
+  <data name="RequiredFieldError" xml:space="preserve">
+    <value>O campo {0} é obrigatório.</value>
   </data>
 </root>
