@@ -3,10 +3,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using GameShareManager.Identity.Managers;
+using GameShareManager.Identity.Models;
+using GameShareManager.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using GameShareManager.Models;
 
 namespace GameShareManager.Controllers
 {

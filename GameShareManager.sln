@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShareManager", "GameShareManager\GameShareManager.csproj", "{0A1DE74F-CFF5-4AEB-B822-AD23DE0AE2E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShareManager.Identity", "GameShareManager.Identity\GameShareManager.Identity.csproj", "{AB3F6874-54DC-4E17-89FB-8BAF820B0FD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShareManager.Resource", "GameShareManager.Resource\GameShareManager.Resource.csproj", "{6E55648B-0A72-4E1D-9443-6095F19E7978}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0A1DE74F-CFF5-4AEB-B822-AD23DE0AE2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A1DE74F-CFF5-4AEB-B822-AD23DE0AE2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A1DE74F-CFF5-4AEB-B822-AD23DE0AE2E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB3F6874-54DC-4E17-89FB-8BAF820B0FD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB3F6874-54DC-4E17-89FB-8BAF820B0FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB3F6874-54DC-4E17-89FB-8BAF820B0FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB3F6874-54DC-4E17-89FB-8BAF820B0FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E55648B-0A72-4E1D-9443-6095F19E7978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E55648B-0A72-4E1D-9443-6095F19E7978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E55648B-0A72-4E1D-9443-6095F19E7978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E55648B-0A72-4E1D-9443-6095F19E7978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

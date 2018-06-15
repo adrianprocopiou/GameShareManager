@@ -1,11 +1,11 @@
-﻿using System.Security.Claims;
+﻿using GameShareManager.Identity.Models;
+using System.Security.Claims;
 using System.Threading.Tasks;
-using GameShareManager.Models;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 
-namespace GameShareManager
+namespace GameShareManager.Identity.Managers
 {
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {

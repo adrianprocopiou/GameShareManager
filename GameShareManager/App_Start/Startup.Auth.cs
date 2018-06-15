@@ -1,11 +1,12 @@
 ﻿using System;
+using GameShareManager.Identity.Managers;
+using GameShareManager.Identity.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using GameShareManager.Models;
 
 namespace GameShareManager
 {

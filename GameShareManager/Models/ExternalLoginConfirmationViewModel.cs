@@ -4,8 +4,8 @@ namespace GameShareManager.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required(ErrorMessageResourceName = "RequiredFieldError", ErrorMessageResourceType = typeof(Resources.Language))]
-        [Display(Name = "Email", ResourceType = typeof(Resources.Language))]
+        [Required(ErrorMessageResourceName = "RequiredFieldError", ErrorMessageResourceType = typeof(Resource.Language))]
+        [Display(Name = "Email", ResourceType = typeof(Resource.Language))]
         public string Email { get; set; }
     }
 }

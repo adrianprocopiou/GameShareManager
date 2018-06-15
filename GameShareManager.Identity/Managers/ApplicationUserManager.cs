@@ -1,11 +1,12 @@
 ﻿using System;
-using GameShareManager.Models;
+using GameShareManager.Identity.Models;
+using GameShareManager.Identity.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 
-namespace GameShareManager
+namespace GameShareManager.Identity.Managers
 {
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {

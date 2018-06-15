@@ -5,10 +5,12 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using GameShareManager.Identity.Managers;
+using GameShareManager.Identity.Models;
+using GameShareManager.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using GameShareManager.Models;
 
 namespace GameShareManager.Controllers
 {
@@ -86,7 +88,7 @@ namespace GameShareManager.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", Resources.Language.InvalidLoginError);
+                    ModelState.AddModelError("", Resource.Language.InvalidLoginError);
                     return View(model);
             }
         }
@@ -129,7 +131,7 @@ namespace GameShareManager.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", Resources.Language.InvalidCodeError);
+                    ModelState.AddModelError("", Resource.Language.InvalidCodeError);
                     return View(model);
             }
         }
