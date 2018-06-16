@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using GameShareManager.IoC;
+using LightInject;
 
 namespace GameShareManager
 {
@@ -16,6 +14,8 @@ namespace GameShareManager
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            LightInjectConfig.ServiceContainer.RegisterControllers(typeof(MvcApplication).Assembly);
+            LightInjectConfig.ServiceContainer.EnableMvc();
         }
     }
 }

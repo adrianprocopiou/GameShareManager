@@ -46,6 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LightInject, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.5.0.0\lib\net46\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -299,9 +308,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameShareManager.Application\GameShareManager.Application.csproj">
+      <Project>{5804A8B5-FAC9-4E96-8481-F821E5D5A84E}</Project>
+      <Name>GameShareManager.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameShareManager.Identity\GameShareManager.Identity.csproj">
       <Project>{AB3F6874-54DC-4E17-89FB-8BAF820B0FD4}</Project>
       <Name>GameShareManager.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameShareManager.IoC\GameShareManager.IoC.csproj">
+      <Project>{f474cbf0-9806-454d-9e78-5d6e38bf1e89}</Project>
+      <Name>GameShareManager.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameShareManager.Resource\GameShareManager.Resource.csproj">
       <Project>{6e55648b-0a72-4e1d-9443-6095f19e7978}</Project>
