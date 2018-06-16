@@ -1,0 +1,16 @@
+﻿using GameShareManager.Application.Interfaces;
+using GameShareManager.Application.ViewModels;
+using GameShareManager.Data.Context;
+using GameShareManager.Data.Interfaces;
+using GameShareManager.Domain.Entities;
+using GameShareManager.Domain.Interfaces.Services;
+
+namespace GameShareManager.Application.Services
+{
+    public class CompanyAppService : BaseAppService<Company,CompanyViewModel,GameShareManagerContext>, ICompanyAppService
+    {
+        public CompanyAppService(IUnitOfWork<GameShareManagerContext> uow, IService<Company> service) : base(uow, service)
+        {
+        }
+    }
+}
