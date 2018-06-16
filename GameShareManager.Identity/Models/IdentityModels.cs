@@ -20,7 +20,7 @@ namespace GameShareManager.Identity.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("GameShareManager", throwIfV1Schema: false)
         {
         }
 
