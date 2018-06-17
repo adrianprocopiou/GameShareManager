@@ -9,7 +9,7 @@ namespace GameShareManager.Application.Services
 {
     public class FriendAppService : BaseAppService<Friend,FriendViewModel,GameShareManagerContext>, IFriendAppService
     {
-        public FriendAppService(IUnitOfWork<GameShareManagerContext> uow, IService<Friend> service) : base(uow, service)
+        public FriendAppService(IUnitOfWork<GameShareManagerContext> uow, IFriendService service) : base(uow, service)
         {
         }
     }

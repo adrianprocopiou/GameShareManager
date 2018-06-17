@@ -9,7 +9,7 @@ namespace GameShareManager.Application.Services
 {
     public class CompanyAppService : BaseAppService<Company,CompanyViewModel,GameShareManagerContext>, ICompanyAppService
     {
-        public CompanyAppService(IUnitOfWork<GameShareManagerContext> uow, IService<Company> service) : base(uow, service)
+        public CompanyAppService(IUnitOfWork<GameShareManagerContext> uow, ICompanyService service) : base(uow, service)
         {
         }
     }
