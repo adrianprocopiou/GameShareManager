@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using GameShareManager.Application.AutoMapper;
 using GameShareManager.IoC;
 using LightInject;
 
@@ -16,6 +17,7 @@ namespace GameShareManager
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             LightInjectConfig.ServiceContainer.RegisterControllers(typeof(MvcApplication).Assembly);
             LightInjectConfig.ServiceContainer.EnableMvc();
+            AutoMapperConfig.RegisterMapping();
         }
     }
 }
