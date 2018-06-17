@@ -1,9 +1,9 @@
-﻿using System.Threading;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace GameShareManager.Controllers
 {
-    public class HomeController : BaseController
+    [Authorize]
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {

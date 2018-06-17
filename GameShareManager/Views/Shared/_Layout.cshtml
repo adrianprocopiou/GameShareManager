@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,38 +9,56 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/font-awesome/css")
 </head>
-<body>
+@if (Request.IsAuthenticated)
+{
+    <body>
 
-    <!-- Wrapper-->
-    <div id="wrapper">
+        <!-- Wrapper-->
+        <div id="wrapper">
 
-        <!-- Navigation -->
-        @Html.Partial("_Navigation")
+            <!-- Navigation -->
+            @Html.Partial("_Navigation")
 
-        <!-- Page wraper -->
-        <div id="page-wrapper" class="gray-bg">
+            <!-- Page wraper -->
+            <div id="page-wrapper" class="gray-bg">
 
-            <!-- Top Navbar -->
-            @Html.Partial("_TopNavbar")
+                <!-- Top Navbar -->
+                @Html.Partial("_TopNavbar")
 
-            <!-- Main view  -->
-            @RenderBody()
+                <!-- Main view  -->
+                @RenderBody()
 
-            <!-- Footer -->
-            @Html.Partial("_Footer")
+                <!-- Footer -->
+                @Html.Partial("_Footer")
+
+            </div>
+            <!-- End page wrapper-->
 
         </div>
-        <!-- End page wrapper-->
+        <!-- End wrapper-->
 
-    </div>
-    <!-- End wrapper-->
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/plugins/metsiMenu")
+        @Scripts.Render("~/plugins/pace")
+        @Scripts.Render("~/plugins/slimScroll")
+        @Scripts.Render("~/bundles/inspinia")
+        @RenderSection("scripts", required: false)
+    </body>
+}
+else
+{
+    @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/plugins/metsiMenu")
-    @Scripts.Render("~/plugins/pace")
-    @Scripts.Render("~/plugins/slimScroll")
-    @Scripts.Render("~/bundles/inspinia")
+    var routeValues = this.ViewContext.RouteData.Values;
+    var controller = routeValues["controller"] as string;
+    var action = routeValues["action"] as string;
+
+    <ul>
+        <li>@Html.ActionLink("Portugues", @action, @controller, new { culture = "pt-BR" }, new { rel = "alternate", hreflang = "pt-BR" })</li>
+        <li>@Html.ActionLink("English", @action, @controller, new { culture = "en-US" }, new { rel = "alternate", hreflang = "en-US" })</li>
+    </ul>
+
     @RenderSection("scripts", required: false)
-</body>
+}
 </html>
