@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using GameShareManager.Domain.Entities;
 
 namespace GameShareManager.Domain.Interfaces.Services
@@ -31,5 +32,7 @@ namespace GameShareManager.Domain.Interfaces.Services
         /// </summary>
         /// <param name="obj">Object to be removed</param>
         void Remove(T obj);
+
+        IEnumerable<T> GetAll();
     }
 }

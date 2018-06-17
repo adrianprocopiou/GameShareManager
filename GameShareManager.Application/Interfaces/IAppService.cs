@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GameShareManager.Application.Interfaces
 {
@@ -7,6 +8,7 @@ namespace GameShareManager.Application.Interfaces
         TViewModel Add(TViewModel viewModel);
         TViewModel GetById(Guid id);
         TViewModel Update(TViewModel viewModel);
+        IEnumerable<TViewModel> GetAll();
         void Remove(TViewModel viewModel);
     }
 }

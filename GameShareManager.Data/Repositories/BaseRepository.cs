@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using GameShareManager.Data.Interfaces;
@@ -38,6 +39,11 @@ namespace GameShareManager.Data.Repositories
         public void Remove(T obj)
         {
             DbSet.Remove(obj);
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            return DbSet.AsEnumerable();
         }
 
         public void Dispose()

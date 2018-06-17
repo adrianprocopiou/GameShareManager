@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
 using GameShareManager.Application.Interfaces;
 using GameShareManager.Data.Interfaces;
@@ -47,6 +48,14 @@ namespace GameShareManager.Application.Services
             Commit();
             if (result != default(TEntity))
                 return Mapper.Map<TViewModel>(result);
+            return null;
+        }
+
+        public IEnumerable<TViewModel> GetAll()
+        {
+            var result = Service.GetAll();
+            if (result != null)
+                return Mapper.Map<IEnumerable<TViewModel>>(result);
             return null;
         }
 

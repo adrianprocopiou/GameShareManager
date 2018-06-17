@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using GameShareManager.Domain.Entities;
 using GameShareManager.Domain.Interfaces.Repositories;
 using GameShareManager.Domain.Interfaces.Services;
@@ -27,6 +28,11 @@ namespace GameShareManager.Domain.Services
         public void Remove(T obj)
         {
             Repository.Remove(obj);
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            return Repository.GetAll();
         }
 
         public T Update(T obj)
