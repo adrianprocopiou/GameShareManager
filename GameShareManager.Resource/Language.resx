@@ -183,4 +183,10 @@
   <data name="Login_CreateAccount" xml:space="preserve">
     <value>Create an account</value>
   </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Register_LoginDescription" xml:space="preserve">
+    <value>Do you have an account?</value>
+  </data>
 </root>

@@ -3,38 +3,58 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+<div class="row">
+
+    <div class="col-md-6">
+        <h2 class="font-bold">@Language.Login_Welcome</h2>
+
+        <p>
+            @Language.Login_FirstDescription
+        </p>
+
+        <p>
+            @Language.Login_SecondDescription
+        </p>
+
+    </div>
+    <div class="col-md-6">
+        <div class="ibox-content">
+
+            @using (Html.BeginForm("Register", "Account", null, FormMethod.Post, new { @class = "m-t", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Language.Email })
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Language.Password })
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Language.ConfirmPassword })
+                </div>
+
+                <input type="submit" class="btn btn-primary block full-width m-b" value="@Language.CreateAccount">
+
+                <p class="text-muted text-center">
+                    <small>@Language.Register_LoginDescription</small>
+                </p>
+                @Html.ActionLink(Language.Login, "Login", null, new { @class = "btn btn-sm btn-white btn-block" })
+            }
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <strong>Copyright</strong> Adrian Toledo Procopiou
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
+    <div class="col-md-6 text-right">
+        <small>© 2018</small>
     </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -88,6 +88,15 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string CreateAccount {
+            get {
+                return ResourceManager.GetString("CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Current password.
         /// </summary>
         public static string CurrentPassword {
@@ -228,6 +237,15 @@ namespace GameShareManager.Resource {
         public static string PhoneNumber {
             get {
                 return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have an account?.
+        /// </summary>
+        public static string Register_LoginDescription {
+            get {
+                return ResourceManager.GetString("Register_LoginDescription", resourceCulture);
             }
         }
         
