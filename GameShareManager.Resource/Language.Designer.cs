@@ -124,6 +124,60 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create an account.
+        /// </summary>
+        public static string Login_CreateAccount {
+            get {
+                return ResourceManager.GetString("Login_CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do not have an account?.
+        /// </summary>
+        public static string Login_CreateAccountDescription {
+            get {
+                return ResourceManager.GetString("Login_CreateAccountDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Game Share Manager platform allows managing the loans of your games..
+        /// </summary>
+        public static string Login_FirstDescription {
+            get {
+                return ResourceManager.GetString("Login_FirstDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You will never be without knowing who your games are with!.
+        /// </summary>
+        public static string Login_SecondDescription {
+            get {
+                return ResourceManager.GetString("Login_SecondDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to GSM.
+        /// </summary>
+        public static string Login_Welcome {
+            get {
+                return ResourceManager.GetString("Login_Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
         /// </summary>
         public static string MinimumStringLenghtError {

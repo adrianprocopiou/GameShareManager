@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var routeValues = this.ViewContext.RouteData.Values;
+    var controller = routeValues["controller"] as string;
+    var action = routeValues["action"] as string;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -48,17 +54,28 @@
 }
 else
 {
-    @RenderBody()
+    
 
-    var routeValues = this.ViewContext.RouteData.Values;
-    var controller = routeValues["controller"] as string;
-    var action = routeValues["action"] as string;
+    <body class="gray-bg">
+        <div class="loginColumns animated fadeInDown">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="/Content/Images/brazil-flag.png" height="32" width="32" alt="Português" />
+                    @Html.ActionLink("Português", @action, @controller, new {culture = "pt-BR"}, new {rel = "alternate", hreflang = "pt-BR"})
+                </div>
 
-    <ul>
-        <li>@Html.ActionLink("Portugues", @action, @controller, new { culture = "pt-BR" }, new { rel = "alternate", hreflang = "pt-BR" })</li>
-        <li>@Html.ActionLink("English", @action, @controller, new { culture = "en-US" }, new { rel = "alternate", hreflang = "en-US" })</li>
-    </ul>
+                <div class="col-md-3">
+                    <img src="/Content/Images/united-states-flag.png" height="32" width="32" alt="English" />
+                    @Html.ActionLink("English", @action, @controller, new { culture = "en-US" }, new { rel = "alternate", hreflang = "en-US" })
+                </div>
+            </div>
 
-    @RenderSection("scripts", required: false)
+
+            @RenderBody()
+
+
+            @RenderSection("scripts", required: false)
+        </div>
+    </body>
 }
 </html>

@@ -165,4 +165,22 @@
   <data name="RequiredFieldError" xml:space="preserve">
     <value>O campo {0} é obrigatório.</value>
   </data>
+  <data name="Login_Welcome" xml:space="preserve">
+    <value>Seja bem-vindo ao GSM</value>
+  </data>
+  <data name="Login_FirstDescription" xml:space="preserve">
+    <value>A platafoma Game Share Manager, permite o gerenciamento dos empréstimos dos seus jogos.</value>
+  </data>
+  <data name="Login_SecondDescription" xml:space="preserve">
+    <value>Você nunca mais ficará sem saber com quem seus jogos estão!</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="Login_CreateAccountDescription" xml:space="preserve">
+    <value>Ainda não possui uma conta?</value>
+  </data>
+  <data name="Login_CreateAccount" xml:space="preserve">
+    <value>Cadastre-se</value>
+  </data>
 </root>
