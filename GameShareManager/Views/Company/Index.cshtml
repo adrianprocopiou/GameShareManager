@@ -84,8 +84,15 @@
                 }
             ];
 
+            var endpoints = {
+                dataSrc: '@Url.Action("DataTable")',
+                details: '@Url.Action("Details")',
+                edit: '@Url.Action("Edit")',
+                delete:  '@Url.Action("Delete")'
+            }
 
-            table =  $('#companies-table').DataTable(CreateDataTableConfiguration('@CultureHelper.CurrentCulture', '@Url.Action("DataTable")', filters, columns));
+
+            table =  $('#companies-table').DataTable(CreateDataTableConfiguration('@CultureHelper.CurrentCulture', endpoints, filters, columns));
         });
 
         $("#filter-name").on('input', function() {

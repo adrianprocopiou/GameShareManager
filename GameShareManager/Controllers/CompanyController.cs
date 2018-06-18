@@ -1,11 +1,8 @@
-﻿using System.Linq;
+﻿using System;
 using System.Web.Mvc;
-using GameShareManager.Application.DataTables;
 using GameShareManager.Application.Filters;
 using GameShareManager.Application.Interfaces;
 using GameShareManager.Application.ViewModels;
-using GameShareManager.Extension;
-using Microsoft.Ajax.Utilities;
 
 namespace GameShareManager.Controllers
 {
@@ -30,9 +27,10 @@ namespace GameShareManager.Controllers
         }
 
         // GET: Company/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(Guid id)
         {
-            return View();
+            var company = _companyAppService.GetById(id);
+            return View(company);
         }
 
         // GET: Company/Create

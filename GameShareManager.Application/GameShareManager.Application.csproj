@@ -36,6 +36,7 @@
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +74,10 @@
     <ProjectReference Include="..\GameShareManager.Domain\GameShareManager.Domain.csproj">
       <Project>{D0482B30-0BD2-4984-89DB-A2CCC566F1D3}</Project>
       <Name>GameShareManager.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameShareManager.Resource\GameShareManager.Resource.csproj">
+      <Project>{6E55648B-0A72-4E1D-9443-6095F19E7978}</Project>
+      <Name>GameShareManager.Resource</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

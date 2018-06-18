@@ -1,4 +1,4 @@
-function CreateDataTableConfiguration(language, endpoint, filters, columns) {
+function CreateDataTableConfiguration(language, endpoints, filters, columns) {
     var config = {
         serverSide: true,
         searching: false,
@@ -9,7 +9,7 @@ function CreateDataTableConfiguration(language, endpoint, filters, columns) {
         language: translate[language],
 
         ajax: {
-            url: endpoint,
+            url: endpoints.dataSrc,
             data: function(d) {
                 for (var filter in filters) {
                     if (filters.hasOwnProperty(filter)) {
@@ -27,12 +27,10 @@ function CreateDataTableConfiguration(language, endpoint, filters, columns) {
         className: "text-center td-actions",
         sortable: false,
         render: function(data, type, row, meta) {
-            var element = '<a href="Details/' +
-                data +
-                '"> <i class="fa fa-search text-navy"></i> </a><a href="Edit/' +
-                data +
-                '"><i class="fa fa-pencil-alt text-warning"></i></a><a href="Delete/' +
-                data +
+            var element =
+                '<a href="'+endpoints.details+'/'+data+
+                '"> <i class="fa fa-search text-navy"></i> </a><a href="' + endpoints.edit + '/' + data +
+                '"><i class="fa fa-pencil-alt text-warning"></i></a><a href="' + endpoints.delete + '/' + data +
                 '"><i class="fa fa-trash-alt text-danger"></i></a>';;
 
             return element;
