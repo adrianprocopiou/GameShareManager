@@ -41,7 +41,24 @@ namespace GameShareManager.Data.Repositories
 
         public void Remove(TEntity obj)
         {
-            DbSet.Remove(obj);
+            var entry = DbContext.Entry(obj);
+            if (entry.State == EntityState.Detached)
+            {
+                var localObject = DbSet.Local.FirstOrDefault(x => x.Id == obj.Id);
+                if (localObject != default(TEntity))
+                {
+                    DbSet.Remove(localObject);
+                }
+                else
+                {
+                    DbSet.Attach(obj);
+                    DbSet.Remove(obj);
+                }
+            }
+            else
+            {
+                DbSet.Remove(obj);
+            }
         }
 
         public IEnumerable<TEntity> GetAll()

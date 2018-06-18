@@ -23,7 +23,7 @@ namespace GameShareManager.Controllers
 
         public JsonResult DataTable(CompanyAppFilter appFilter)
         {
-            return Json( _companyAppService.GetFilter(appFilter), JsonRequestBehavior.AllowGet);
+            return Json(_companyAppService.GetFilter(appFilter), JsonRequestBehavior.AllowGet);
         }
 
         // GET: Company/Details/5
@@ -82,24 +82,28 @@ namespace GameShareManager.Controllers
         }
 
         // GET: Company/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
-            return View();
+            var company = _companyAppService.GetById(id);
+            if (company == default(CompanyViewModel)) return HttpNotFound();
+            return View(company);
         }
 
         // POST: Company/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed([Bind(Include = "Id")]Guid id)
         {
+            var company = _companyAppService.GetById(id);
+            if (company == default(CompanyViewModel)) return HttpNotFound();
             try
             {
-                // TODO: Add delete logic here
-
+                _companyAppService.Remove(company);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(company);
             }
         }
     }
