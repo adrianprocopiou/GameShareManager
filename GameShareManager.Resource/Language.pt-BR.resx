@@ -201,4 +201,13 @@
   <data name="Filters" xml:space="preserve">
     <value>Filtros</value>
   </data>
+  <data name="Create" xml:space="preserve">
+    <value>Cadastrar</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Fabricante</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
 </root>

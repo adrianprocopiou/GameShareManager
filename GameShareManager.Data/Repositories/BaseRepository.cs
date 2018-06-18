@@ -22,6 +22,7 @@ namespace GameShareManager.Data.Repositories
 
         public TEntity Add(TEntity obj)
         {
+            obj.Id = Guid.NewGuid();
            return DbSet.Add(obj);
         }
 

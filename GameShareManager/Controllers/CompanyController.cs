@@ -43,17 +43,17 @@ namespace GameShareManager.Controllers
 
         // POST: Company/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Name")]CompanyViewModel company)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                _companyAppService.Add(company);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(company);
             }
         }
 
