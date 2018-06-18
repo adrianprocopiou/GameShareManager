@@ -1,0 +1,40 @@
+﻿@model GameShareManager.Application.ViewModels.CompanyViewModel
+
+@{
+    ViewBag.Title = $"{Language.Edit} {Language.Company}";
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@Language.Edit @Language.Company</h5>
+                </div>
+                @using (Html.BeginForm("Edit", "Company", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(x=>x.Id)
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = Language.Name })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="hr-line-dashed"></div>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.ActionLink(@Language.Cancel, "Index", null, new { @class = "btn btn-default" })
+                                <input type="submit" class="btn btn-primary" value="@Language.Edit">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

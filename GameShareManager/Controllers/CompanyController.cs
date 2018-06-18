@@ -30,6 +30,7 @@ namespace GameShareManager.Controllers
         public ActionResult Details(Guid id)
         {
             var company = _companyAppService.GetById(id);
+            if (company == default(CompanyViewModel)) return HttpNotFound();
             return View(company);
         }
 
@@ -56,24 +57,27 @@ namespace GameShareManager.Controllers
         }
 
         // GET: Company/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
-            return View();
+
+            var company = _companyAppService.GetById(id);
+            if (company == default(CompanyViewModel)) return HttpNotFound();
+            return View(company);
         }
 
         // POST: Company/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id, Name")]CompanyViewModel company)
         {
             try
             {
-                // TODO: Add update logic here
-
+                _companyAppService.Update(company);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(company);
             }
         }
 
