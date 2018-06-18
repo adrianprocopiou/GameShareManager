@@ -37,5 +37,11 @@
     <Compile Include="FilterSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameShareManager.Extension\GameShareManager.Extension.csproj">
+      <Project>{80DB275A-CE74-4D65-AC2C-568322FFC8D0}</Project>
+      <Name>GameShareManager.Extension</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

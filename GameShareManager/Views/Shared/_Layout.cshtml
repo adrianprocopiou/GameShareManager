@@ -12,8 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@ViewBag.Title | Game Share Manager</title>
+   
+    @if (IsSectionDefined("Styles"))
+    {
+        @RenderSection("Styles", required: false)
+    }
     @Styles.Render("~/Content/css")
     @Styles.Render("~/font-awesome/css")
+  
 </head>
 @if (Request.IsAuthenticated)
 {
@@ -25,12 +31,17 @@
             <!-- Navigation -->
             @Html.Partial("_Navigation")
 
+
             <!-- Page wraper -->
             <div id="page-wrapper" class="gray-bg">
 
                 <!-- Top Navbar -->
                 @Html.Partial("_TopNavbar")
-
+                <div class="row wrapper border-bottom white-bg page-heading">
+                    <div class="col-lg-10">
+                        <h2>@ViewBag.Title</h2>
+                    </div>
+                </div>
                 <!-- Main view  -->
                 @RenderBody()
 
@@ -54,14 +65,14 @@
 }
 else
 {
-    
+
 
     <body class="gray-bg">
         <div class="loginColumns animated fadeInDown">
             <div class="row">
                 <div class="col-md-3">
                     <img src="/Content/Images/brazil-flag.png" height="32" width="32" alt="Português" />
-                    @Html.ActionLink("Português", @action, @controller, new {culture = "pt-BR"}, new {rel = "alternate", hreflang = "pt-BR"})
+                    @Html.ActionLink("Português", @action, @controller, new { culture = "pt-BR" }, new { rel = "alternate", hreflang = "pt-BR" })
                 </div>
 
                 <div class="col-md-3">

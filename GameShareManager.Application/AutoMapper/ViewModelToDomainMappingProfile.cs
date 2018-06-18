@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using GameShareManager.Application.Filters;
 using GameShareManager.Application.ViewModels;
 using GameShareManager.Domain.Entities;
+using GameShareManager.Domain.Filters;
 
 namespace GameShareManager.Application.AutoMapper
 {
@@ -11,6 +13,9 @@ namespace GameShareManager.Application.AutoMapper
             CreateMap<CompanyViewModel, Company>();
             CreateMap<FriendViewModel, Friend>();
             CreateMap<GameViewModel, Game>();
+            CreateMap<CompanyAppFilter, CompanyFilter>();
+            CreateMap<FriendAppFilter, FriendFilter>();
+            CreateMap<GameAppFilter, GameFilter>();
         }
 
         public override string ProfileName => "ViewModelToDomainMapping";

@@ -28,7 +28,7 @@ namespace GameShareManager.IoC
             container.Register(typeof(UnitOfWorkService<>), typeof(UnitOfWorkService<>), new PerScopeLifetime());
 
 
-            container.Register(typeof(IService<>), typeof(BaseService<>), new PerScopeLifetime());
+            container.Register(typeof(IService<,>), typeof(BaseService<,>), new PerScopeLifetime());
 
 
             // Company

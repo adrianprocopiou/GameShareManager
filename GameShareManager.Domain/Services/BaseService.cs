@@ -1,41 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameShareManager.Domain.Entities;
+using GameShareManager.Domain.Filters;
 using GameShareManager.Domain.Interfaces.Repositories;
 using GameShareManager.Domain.Interfaces.Services;
 
 namespace GameShareManager.Domain.Services
 {
-    public class BaseService<T> : IService<T> where T : Entity
+    public abstract class BaseService<TEntity, TFilter> : IService<TEntity, TFilter> where TEntity : Entity where TFilter : BaseFilter
     {
-        protected readonly IRepository<T> Repository;
+        protected readonly IRepository<TEntity, TFilter> Repository;
 
-        public BaseService(IRepository<T> repository)
+        protected BaseService(IRepository<TEntity, TFilter> repository)
         {
             Repository = repository;
         }
 
-        public T Add(T obj)
+        public TEntity Add(TEntity obj)
         {
             return Repository.Add(obj);
         }
 
-        public T FindById(Guid id)
+        public TEntity FindById(Guid id)
         {
             return Repository.FindById(id);
         }
 
-        public void Remove(T obj)
+        public void Remove(TEntity obj)
         {
             Repository.Remove(obj);
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             return Repository.GetAll();
         }
 
-        public T Update(T obj)
+        public abstract DataTableResult<TEntity> GetDataTableResultByFilter(TFilter filter);
+
+
+        public TEntity Update(TEntity obj)
         {
             return Repository.Update(obj);
         }

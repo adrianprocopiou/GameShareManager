@@ -37,6 +37,12 @@
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Friend.cs" />
     <Compile Include="Entities\Game.cs" />
+    <Compile Include="Filters\BaseFilter.cs" />
+    <Compile Include="Filters\GameFilter.cs" />
+    <Compile Include="Filters\FriendFilter.cs" />
+    <Compile Include="Filters\CompanyFilter.cs" />
+    <Compile Include="Filters\DataTableResult.cs" />
+    <Compile Include="Filters\Order.cs" />
     <Compile Include="Interfaces\Repositories\IFriendRepository.cs" />
     <Compile Include="Interfaces\Repositories\IGameRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICompanyRepository.cs" />

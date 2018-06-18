@@ -4,31 +4,33 @@ using System.Data.Entity;
 using System.Linq;
 using GameShareManager.Data.Interfaces;
 using GameShareManager.Domain.Entities;
+using GameShareManager.Domain.Filters;
 using GameShareManager.Domain.Interfaces.Repositories;
 
 namespace GameShareManager.Data.Repositories
 {
-    public class BaseRepository<T> : IRepository<T> where T:Entity
+    public abstract class BaseRepository<TEntity, TFilter> : IRepository<TEntity,TFilter> where TEntity:Entity where TFilter:BaseFilter
     {
-        protected readonly IDbSet<T> DbSet;
+        protected readonly IDbSet<TEntity> DbSet;
         protected readonly IDbContext DbContext;
-        public BaseRepository(IDbContext context)
+
+        protected BaseRepository(IDbContext context)
         {
             DbContext = context;
-            DbSet = DbContext.Set<T>();
+            DbSet = DbContext.Set<TEntity>();
         }
 
-        public T Add(T obj)
+        public TEntity Add(TEntity obj)
         {
            return DbSet.Add(obj);
         }
 
-        public T FindById(Guid id)
+        public TEntity FindById(Guid id)
         {
             return DbSet.FirstOrDefault(x => x.Id == id);
         }
 
-        public T Update(T obj)
+        public TEntity Update(TEntity obj)
         {
             var entry = DbContext.Entry(obj);
             DbSet.Attach(obj);
@@ -36,15 +38,17 @@ namespace GameShareManager.Data.Repositories
             return entry.Entity;
         }
 
-        public void Remove(T obj)
+        public void Remove(TEntity obj)
         {
             DbSet.Remove(obj);
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
             return DbSet.AsEnumerable();
         }
+
+        public abstract DataTableResult<TEntity> GetByFilter(TFilter filter);
 
         public void Dispose()
         {

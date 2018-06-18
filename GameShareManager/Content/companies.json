@@ -1,0 +1,16 @@
+﻿{
+  "draw": 1,
+  "recordsTotal": 57,
+  "recordsFiltered": 2,
+  "data": [
+    {
+      "Id": "27f48f3d-bd5e-42a7-a817-0b30b0a5e6fe",
+      "Name": "Olar2"
+    },
+    {
+      "Id": "d2ed9053-7828-4489-bce5-10daea54c461",
+      "Name": "Sony"
+    }
+  ]
+
+}

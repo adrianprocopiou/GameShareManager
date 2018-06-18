@@ -33,9 +33,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PagedList.cs" />
-    <Compile Include="PagedListExtension.cs" />
+    <Compile Include="DataTableResultExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameShareManager.Domain\GameShareManager.Domain.csproj">
+      <Project>{D0482B30-0BD2-4984-89DB-A2CCC566F1D3}</Project>
+      <Name>GameShareManager.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -189,4 +189,16 @@
   <data name="Register_LoginDescription" xml:space="preserve">
     <value>Já possuí uma conta?</value>
   </data>
+  <data name="Companies" xml:space="preserve">
+    <value>Fabricantes</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Ações</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtros</value>
+  </data>
 </root>

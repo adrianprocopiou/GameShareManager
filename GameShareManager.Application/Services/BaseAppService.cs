@@ -1,21 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using GameShareManager.Application.DataTables;
 using GameShareManager.Application.Interfaces;
 using GameShareManager.Data.Interfaces;
 using GameShareManager.Domain.Entities;
+using GameShareManager.Domain.Filters;
 using GameShareManager.Domain.Interfaces.Services;
 
 namespace GameShareManager.Application.Services
 {
-    public class BaseAppService<TEntity, TViewModel, TContext> : UnitOfWorkService<TContext>, IAppService<TViewModel>
+    public abstract class BaseAppService<TEntity, TViewModel, TFilter, TAppFilter, TContext> : UnitOfWorkService<TContext>, IAppService<TViewModel, TAppFilter>
         where TContext : IDbContext
         where TEntity : Entity
         where TViewModel : class
-    {
-        protected readonly IService<TEntity> Service;
+        where TFilter : BaseFilter
+        where TAppFilter : DataTableAjaxPostModel
 
-        public BaseAppService(IUnitOfWork<TContext> uow, IService<TEntity> service) : base(uow)
+
+    {
+        protected readonly IService<TEntity, TFilter> Service;
+
+        protected BaseAppService(IUnitOfWork<TContext> uow, IService<TEntity, TFilter> service) : base(uow)
         {
             Service = service;
         }
@@ -57,6 +63,12 @@ namespace GameShareManager.Application.Services
             if (result != null)
                 return Mapper.Map<IEnumerable<TViewModel>>(result);
             return null;
+        }
+
+        public DataTableResultApp<TViewModel> GetFilter(TAppFilter filter)
+        {
+            var resultService = Service.GetDataTableResultByFilter(Mapper.Map<TFilter>(filter));
+            return new DataTableResultApp<TViewModel>(resultService.draw, resultService.start, resultService.length, resultService.recordsTotal, Mapper.Map<List<TViewModel>>(resultService.data), resultService.recordsFiltered);
         }
 
         public void Remove(TViewModel viewModel)

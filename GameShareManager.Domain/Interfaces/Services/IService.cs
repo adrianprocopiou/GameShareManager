@@ -1,38 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameShareManager.Domain.Entities;
+using GameShareManager.Domain.Filters;
 
 namespace GameShareManager.Domain.Interfaces.Services
 {
-    public interface IService<T> where T : Entity
+    public interface IService<TEntity, TFilter> where TEntity : Entity where TFilter : BaseFilter
     {
         /// <summary>
-        /// Store object into database
+        ///     Store object into database
         /// </summary>
         /// <param name="obj">Object to be stored</param>
         /// <returns></returns>
-        T Add(T obj);
+        TEntity Add(TEntity obj);
 
         /// <summary>
-        /// Retrieves the object with specified id from database
+        ///     Retrieves the object with specified id from database
         /// </summary>
         /// <param name="id">The id sent to retrieve object</param>
         /// <returns></returns>
-        T FindById(Guid id);
+        TEntity FindById(Guid id);
 
         /// <summary>
-        /// Update the sent object
+        ///     Update the sent object
         /// </summary>
         /// <param name="obj">Object to be updated</param>
         /// <returns></returns>
-        T Update(T obj);
+        TEntity Update(TEntity obj);
 
         /// <summary>
-        /// Remove the sent object from database
+        ///     Remove the sent object from database
         /// </summary>
         /// <param name="obj">Object to be removed</param>
-        void Remove(T obj);
+        void Remove(TEntity obj);
 
-        IEnumerable<T> GetAll();
+        IEnumerable<TEntity> GetAll();
+
+        DataTableResult<TEntity> GetDataTableResultByFilter(TFilter filter) ;
     }
 }

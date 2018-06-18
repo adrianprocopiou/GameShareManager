@@ -8560,3 +8560,11 @@ body.md-skin {
     margin: 0;
   }
 }
+
+.td-actions {
+    width: 120px;
+}
+
+.td-actions > a {
+    margin: 2px;
+}

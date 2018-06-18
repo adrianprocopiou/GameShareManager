@@ -64,6 +64,10 @@
       <Project>{D0482B30-0BD2-4984-89DB-A2CCC566F1D3}</Project>
       <Name>GameShareManager.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GameShareManager.Extension\GameShareManager.Extension.csproj">
+      <Project>{80DB275A-CE74-4D65-AC2C-568322FFC8D0}</Project>
+      <Name>GameShareManager.Extension</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,9 +1,9 @@
-﻿using GameShareManager.Application.ViewModels;
+﻿using GameShareManager.Application.Filters;
+using GameShareManager.Application.ViewModels;
 
 namespace GameShareManager.Application.Interfaces
 {
-    public interface ICompanyAppService: IAppService<CompanyViewModel>
+    public interface ICompanyAppService: IAppService<CompanyViewModel,CompanyAppFilter>
     {
-        
     }
 }
