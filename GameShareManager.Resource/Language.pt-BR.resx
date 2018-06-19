@@ -222,4 +222,31 @@
   <data name="Delete" xml:space="preserve">
     <value>Excluir</value>
   </data>
+  <data name="Nickname" xml:space="preserve">
+    <value>Apelido</value>
+  </data>
+  <data name="Friends" xml:space="preserve">
+    <value>Amigos</value>
+  </data>
+  <data name="Friend" xml:space="preserve">
+    <value>Amigo</value>
+  </data>
+  <data name="NameOrNickname" xml:space="preserve">
+    <value>Nome ou Apelido</value>
+  </data>
+  <data name="MaximumStringLenghtError" xml:space="preserve">
+    <value>O campo {0} precisa ser composto por no máximo {1} caractere(s).</value>
+  </data>
+  <data name="Friend_Details" xml:space="preserve">
+    <value>Detalhes do Amigo</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Configurar</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
 </root>

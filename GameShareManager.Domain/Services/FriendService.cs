@@ -14,7 +14,7 @@ namespace GameShareManager.Domain.Services
 
         public override DataTableResult<Friend> GetDataTableResultByFilter(FriendFilter filter)
         {
-            throw new System.NotImplementedException();
+            return Repository.GetByFilter(filter);
         }
     }
 }

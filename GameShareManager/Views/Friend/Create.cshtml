@@ -1,0 +1,62 @@
+﻿@model GameShareManager.Application.ViewModels.FriendViewModel
+
+@{
+    ViewBag.Title = $"{Language.Create} {Language.Friend}";
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@ViewBag.Title</h5>
+                </div>
+                @using (Html.BeginForm("Create", "Friend", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="ibox-content">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = Language.Name })
+                                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Nickname, new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => x.Nickname, new { @class = "form-control", placeholder = Language.Nickname })
+                                    @Html.ValidationMessageFor(m => m.Nickname, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = Language.Email })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
+                                    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = Language.PhoneNumber })
+                                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="hr-line-dashed"></div>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.ActionLink(@Language.Cancel, "Index", null, new { @class = "btn btn-default" })
+                                <input type="submit" class="btn btn-primary" value="@Language.Create">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

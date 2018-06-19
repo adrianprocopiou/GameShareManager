@@ -1,0 +1,63 @@
+﻿@model GameShareManager.Application.ViewModels.FriendViewModel
+
+@{
+    ViewBag.Title = $"{Language.Delete} {Language.Friend}";
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@ViewBag.Title?</h5>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = Language.Name, disabled = true })
+                                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Nickname, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.Nickname, new { @class = "form-control", placeholder = Language.Nickname, disabled = true })
+                                @Html.ValidationMessageFor(m => m.Nickname, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = Language.Email, disabled = true })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", placeholder = Language.PhoneNumber, disabled = true })
+                                @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="hr-line-dashed"></div>
+                        </div>
+                        <div class="col-md-12">
+                            @using (Html.BeginForm("Delete", "Friend", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(m => m.Id)
+                                @Html.ActionLink(@Language.Back, "Index", null, new { @class = "btn btn-default" })
+                                <input type="submit" class="btn btn-danger" value="@Language.Delete">
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

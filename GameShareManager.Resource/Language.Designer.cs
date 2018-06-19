@@ -205,6 +205,33 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Friend.
+        /// </summary>
+        public static string Friend {
+            get {
+                return ResourceManager.GetString("Friend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Friend Details.
+        /// </summary>
+        public static string Friend_Details {
+            get {
+                return ResourceManager.GetString("Friend_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Friends.
+        /// </summary>
+        public static string Friends {
+            get {
+                return ResourceManager.GetString("Friends", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid code..
         /// </summary>
         public static string InvalidCodeError {
@@ -277,6 +304,33 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        public static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage.
+        /// </summary>
+        public static string Manage {
+            get {
+                return ResourceManager.GetString("Manage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The {0} field must have at most {1} characters.
+        /// </summary>
+        public static string MaximumStringLenghtError {
+            get {
+                return ResourceManager.GetString("MaximumStringLenghtError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The {0} must be at least {2} characters long..
         /// </summary>
         public static string MinimumStringLenghtError {
@@ -295,6 +349,15 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name or Nickname.
+        /// </summary>
+        public static string NameOrNickname {
+            get {
+                return ResourceManager.GetString("NameOrNickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New password.
         /// </summary>
         public static string NewPassword {
@@ -309,6 +372,24 @@ namespace GameShareManager.Resource {
         public static string NewPasswordAndConfirmPasswordDontMatchError {
             get {
                 return ResourceManager.GetString("NewPasswordAndConfirmPasswordDontMatchError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nickname.
+        /// </summary>
+        public static string Nickname {
+            get {
+                return ResourceManager.GetString("Nickname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string Options {
+            get {
+                return ResourceManager.GetString("Options", resourceCulture);
             }
         }
         

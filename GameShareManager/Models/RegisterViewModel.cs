@@ -1,9 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using GameShareManager.Resource;
 
 namespace GameShareManager.Models
 {
     public class RegisterViewModel
     {
+        [Required(ErrorMessageResourceName = "RequiredFieldError", ErrorMessageResourceType = typeof(Resource.Language))]
+        [StringLength(100, ErrorMessageResourceType = typeof(Language), ErrorMessageResourceName = "MaximumStringLenghtError")]
+        [Display(Name = "Name", ResourceType = typeof(Resource.Language))]
+        public string Name { get; set; }
+
         [Required(ErrorMessageResourceName = "RequiredFieldError", ErrorMessageResourceType = typeof(Resource.Language))]
         [EmailAddress]
         [Display(Name = "Email", ResourceType = typeof(Resource.Language))]
