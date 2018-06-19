@@ -17,45 +17,81 @@ namespace GameShareManager.Data.Repositories
 
         public new Game FindById(Guid id)
         {
-            return DbSet.Include(x=>x.Company).Include(x=>x.Friend).FirstOrDefault(x => x.Id == id);
+            return DbSet.Include(x => x.Company).Include(x => x.Friend).FirstOrDefault(x => x.Id == id);
         }
 
         public override DataTableResult<Game> GetByFilter(GameFilter filter)
         {
-            var games = DbSet.Include(x=>x.Company).AsQueryable();
+            return GetByFilter(filter, false, false);
+        }
+
+        public override Select2Result<Game> GetSelect2Filter(int page, string term)
+        {
+            return GetSelect2Filter(page, term, false, false);
+        }
+
+        public DataTableResult<Game> GetLoansByFilter(GameFilter filter)
+        {
+            return GetByFilter(filter, false, true);
+        }
+
+        public DataTableResult<Game> GetAvailableByFilter(GameFilter filter)
+        {
+            return GetByFilter(filter, true, false);
+        }
+
+        public Select2Result<Game> GetSelect2OnlyAvailableFilter(int page, string term)
+        {
+            return GetSelect2Filter(page, term, true, false);
+        }
+
+        public Select2Result<Game> GetSelect2OnlyLoanFilter(int page, string term)
+        {
+            return GetSelect2Filter(page, term, false, true);
+        }
+
+        public DataTableResult<Game> GetByFilter(GameFilter filter, bool onlyAvailable, bool onlyLent)
+        {
+            var games = DbSet.Include(x => x.Company).Include(x=>x.Friend).AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(filter.Name))
-            {
                 games = games.Where(c => c.Name.Trim().ToLower().Contains(filter.Name.Trim().ToLower()));
-            }
+
 
             if (filter.CompanyId != Guid.Empty)
-            {
                 games = games.Where(x => x.CompanyId == filter.CompanyId);
-            }
 
-            if (filter.OnlyAvailable)
-            {
+            if (onlyAvailable)
                 games = games.Where(x => !x.FriendId.HasValue);
-            }
-            else if (filter.FrienId != Guid.Empty)
-            {
+
+            else if (onlyLent)
+                games = games.Where(x => x.FriendId.HasValue);
+
+
+            if (filter.FrienId != Guid.Empty)
                 games = games.Where(x => x.FriendId == filter.FrienId);
-            }
 
 
-            games = filter.order.Any(o => o.dir == "DESC") ? games.OrderByDescending(x => x.Name) : games.OrderBy(x => x.Name);
+            games = filter.order.Any(o => o.dir == "DESC")
+                ? games.OrderByDescending(x => x.Name)
+                : games.OrderBy(x => x.Name);
 
 
             return games.ToDataTableResult(filter.draw, filter.start, filter.length);
         }
 
-        public override Select2Result<Game> GetSelect2Filter(int page, string term)
+        private Select2Result<Game> GetSelect2Filter(int page, string term, bool onlyAvailable, bool onlyLent)
         {
             var games = DbSet.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(term))
                 games = games.Where(x => x.Name.Trim().ToLower().Contains(term.Trim().ToLower()));
+
+            if (onlyAvailable)
+                games = games.Where(x => !x.FriendId.HasValue);
+
+            else if (onlyLent)
+                games = games.Where(x => x.FriendId.HasValue);
 
             games = games.OrderBy(x => x.Name);
 

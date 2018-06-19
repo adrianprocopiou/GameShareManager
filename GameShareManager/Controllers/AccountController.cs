@@ -162,7 +162,7 @@ namespace GameShareManager.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Loan");
                 }
                 AddErrors(result);
             }
@@ -391,7 +391,7 @@ namespace GameShareManager.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home", new { culture = CultureHelper.CurrentCulture });
+            return RedirectToAction("Index", "Loan", new { culture = CultureHelper.CurrentCulture });
         }
 
         //
@@ -448,7 +448,7 @@ namespace GameShareManager.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Loan");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

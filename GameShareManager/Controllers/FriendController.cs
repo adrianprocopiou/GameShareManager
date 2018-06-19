@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Web.Mvc;
-using GameShareManager.Application.Filters;
 using GameShareManager.Application.Filters.DataTables;
 using GameShareManager.Application.Interfaces;
 using GameShareManager.Application.ViewModels;
 
 namespace GameShareManager.Controllers
 {
+    [Authorize]
     public class FriendController : Controller
     {
         private readonly IFriendAppService _friendAppService;
@@ -25,6 +25,11 @@ namespace GameShareManager.Controllers
         public JsonResult DataTable(FriendAppFilter appFilter)
         {
             return Json(_friendAppService.GetFilter(appFilter), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Select2(string term, int page = 1)
+        {
+            return Json(_friendAppService.GetSelect2Filter(page, term), JsonRequestBehavior.AllowGet);
         }
 
         // GET: Friend/Details/5

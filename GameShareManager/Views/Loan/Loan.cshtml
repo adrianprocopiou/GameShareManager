@@ -1,0 +1,80 @@
+﻿@model GameShareManager.Application.ViewModels.LoanViewModel
+
+@{
+    ViewBag.Title = $"{Language.Loan} {Language.Game}";
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@ViewBag.Title</h5>
+                </div>
+                @using (Html.BeginForm("Loan", "Loan", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="ibox-content">
+                        @Html.ValidationSummary()
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.FriendId, new { @class = "control-label" })
+                                        <select class="form-control" id="FriendId" name="FriendId"></select>
+                                        @Html.ValidationMessageFor(m => m.FriendId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.GameId, new { @class = "control-label" })
+                                    <select class="form-control" id="GameId" name="GameId"></select>
+                                    @Html.ValidationMessageFor(m => m.GameId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="hr-line-dashed"></div>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.ActionLink(Language.Cancel, "Index", null, new { @class = "btn btn-default" })
+                                <input type="submit" class="btn btn-primary" value="@Language.Loan">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/plugins/select2Styles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/select2")
+
+    <script>
+        $(document).ready(function() {
+            var configFriend = createSelect2Configuration('@Language.Select_Company',
+                '@Url.Action("Select2", "Friend")',
+                'Id',
+                'Name');
+
+            var configGame = createSelect2Configuration('@Language.Select_Company',
+                '@Url.Action("Select2Available", "Loan")',
+                'Id',
+                'Name');
+
+            $("#FriendId").select2(configFriend);
+
+            $("#GameId").select2(configGame);
+
+        });
+
+
+    </script>
+}

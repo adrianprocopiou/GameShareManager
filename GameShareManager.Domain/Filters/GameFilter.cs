@@ -7,6 +7,5 @@ namespace GameShareManager.Domain.Filters
         public string Name { get; set; }
         public Guid CompanyId { get; set; }
         public Guid FrienId { get; set; }
-        public bool OnlyAvailable { get; set; } = false;
     }
 }

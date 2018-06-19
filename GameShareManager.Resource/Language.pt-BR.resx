@@ -261,4 +261,22 @@
   <data name="Game_Details" xml:space="preserve">
     <value>Detalhes do Jogo</value>
   </data>
+  <data name="Loans" xml:space="preserve">
+    <value>Empréstimos</value>
+  </data>
+  <data name="Loan" xml:space="preserve">
+    <value>Emprestar</value>
+  </data>
+  <data name="ArgumentInvalid" xml:space="preserve">
+    <value>O argumento {0} é inválido.</value>
+  </data>
+  <data name="Select_Game" xml:space="preserve">
+    <value>Selecione um Jogo</value>
+  </data>
+  <data name="Select_Friend" xml:space="preserve">
+    <value>Selecione um Amigo</value>
+  </data>
+  <data name="GiveBack" xml:space="preserve">
+    <value>Devolver</value>
+  </data>
 </root>

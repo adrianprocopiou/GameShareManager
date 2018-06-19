@@ -66,6 +66,7 @@
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\FriendViewModel.cs" />
     <Compile Include="ViewModels\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\LoanViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameShareManager.Data\GameShareManager.Data.csproj">

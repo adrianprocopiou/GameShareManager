@@ -13,8 +13,9 @@ namespace GameShareManager.Domain.Filters
 
         public Select2Result(IQueryable<TEntity> source, int page)
         {
+            var realPage = page > 0 ? page - 1 : 0;
             this.total_count = source.Count();
-            this.result = source.Skip(PageSize * page).Take(PageSize).ToList();
+            this.result = source.Skip(PageSize * realPage).Take(PageSize).ToList();
         }
     }
 }

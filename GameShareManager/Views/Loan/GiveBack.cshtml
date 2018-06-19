@@ -1,0 +1,85 @@
+﻿@model GameShareManager.Application.ViewModels.GameViewModel
+
+@{
+    ViewBag.Title = Language.GiveBack;
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@Language.Game_Details</h5>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", disabled = true })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.CompanyId, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control", disabled = "true" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@Language.Friend_Details</h5>
+                </div>
+
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FriendName, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.FriendName, new { @class = "form-control", disabled = true })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FriendNickname, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.FriendNickname, new { @class = "form-control", disabled = "true" })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FriendEmail, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.FriendEmail, new { @class = "form-control", disabled = "true" })
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FriendPhoneNumber, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.FriendPhoneNumber, new { @class = "form-control", disabled = "true" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="hr-line-dashed"></div>
+                        </div>
+                        <div class="col-md-12">
+                            @using (Html.BeginForm("GiveBack", "Loan", FormMethod.Post))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.HiddenFor(m => m.Id)
+                                @Html.ActionLink(@Language.Back, "Index", null, new { @class = "btn btn-default" })
+                                <input type="submit" class="btn btn-primary" value="@Language.GiveBack">
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -70,6 +70,15 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The {0} argument is invalid..
+        /// </summary>
+        public static string ArgumentInvalid {
+            get {
+                return ResourceManager.GetString("ArgumentInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Back {
@@ -259,6 +268,15 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Give Back.
+        /// </summary>
+        public static string GiveBack {
+            get {
+                return ResourceManager.GetString("GiveBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid code..
         /// </summary>
         public static string InvalidCodeError {
@@ -273,6 +291,24 @@ namespace GameShareManager.Resource {
         public static string InvalidLoginError {
             get {
                 return ResourceManager.GetString("InvalidLoginError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loan.
+        /// </summary>
+        public static string Loan {
+            get {
+                return ResourceManager.GetString("Loan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loans.
+        /// </summary>
+        public static string Loans {
+            get {
+                return ResourceManager.GetString("Loans", resourceCulture);
             }
         }
         
@@ -489,6 +525,24 @@ namespace GameShareManager.Resource {
         public static string Select_Company {
             get {
                 return ResourceManager.GetString("Select_Company", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Friend.
+        /// </summary>
+        public static string Select_Friend {
+            get {
+                return ResourceManager.GetString("Select_Friend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Game.
+        /// </summary>
+        public static string Select_Game {
+            get {
+                return ResourceManager.GetString("Select_Game", resourceCulture);
             }
         }
     }

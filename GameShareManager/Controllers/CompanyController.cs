@@ -6,6 +6,7 @@ using GameShareManager.Application.ViewModels;
 
 namespace GameShareManager.Controllers
 {
+    [Authorize]
     public class CompanyController : Controller
     {
         private readonly ICompanyAppService _companyAppService;
@@ -26,7 +27,7 @@ namespace GameShareManager.Controllers
             return Json(_companyAppService.GetFilter(appFilter), JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult Select2(string term, int page = 0)
+        public JsonResult Select2(string term, int page = 1)
         {
             return Json(_companyAppService.GetSelect2Filter(page, term), JsonRequestBehavior.AllowGet);
         }

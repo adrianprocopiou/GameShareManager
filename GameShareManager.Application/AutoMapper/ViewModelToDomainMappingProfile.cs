@@ -17,6 +17,7 @@ namespace GameShareManager.Application.AutoMapper
             CreateMap<CompanyAppFilter, CompanyFilter>();
             CreateMap<FriendAppFilter, FriendFilter>();
             CreateMap<GameAppFilter, GameFilter>();
+            CreateMap<LoanViewModel, Loan>();
         }
 
         public override string ProfileName => "ViewModelToDomainMapping";

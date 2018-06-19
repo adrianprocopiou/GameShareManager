@@ -16,5 +16,15 @@ namespace GameShareManager.Application.ViewModels
         [Required(ErrorMessageResourceType = typeof(Language), ErrorMessageResourceName = "RequiredFieldError")]
         public Guid CompanyId { get; set; }
         public string CompanyName { get; set; }
+        public Guid? FriendId { get; set; }
+        [Display(Name = "Name", ResourceType = typeof(Language))]
+        public string FriendName { get; set; }
+        [Display(Name = "Nickname", ResourceType = typeof(Language))]
+        public string FriendNickname { get; set; }
+        [Display(Name = "Email", ResourceType = typeof(Language))]
+        public string FriendEmail { get; set; }
+        [Display(Name = "PhoneNumber", ResourceType = typeof(Language))]
+        public string FriendPhoneNumber { get; set; }
+
     }
 }

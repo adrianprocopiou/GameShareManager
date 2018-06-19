@@ -35,10 +35,14 @@ namespace GameShareManager.Data.Context
 
         public override int SaveChanges()
         {
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().IsSubclassOf(typeof(Entity)) && entry.State == EntityState.Added))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().IsSubclassOf(typeof(Entity))))
             {
-                entry.Property("OwnerUserId").CurrentValue = UserId;
+                if(entry.State == EntityState.Added)
+                    entry.Property("OwnerUserId").CurrentValue = UserId;
+                else if (entry.State == EntityState.Modified)
+                    entry.Property("OwnerUserId").IsModified = false;
             }
+
             return base.SaveChanges();
         }
     }

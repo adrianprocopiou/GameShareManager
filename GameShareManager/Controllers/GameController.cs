@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Web.Mvc;
-using GameShareManager.Application.Filters;
 using GameShareManager.Application.Filters.DataTables;
 using GameShareManager.Application.Interfaces;
 using GameShareManager.Application.ViewModels;
 
 namespace GameShareManager.Controllers
 {
+    [Authorize]
     public class GameController : Controller
     {
         private readonly IGameAppService _gameAppService;
@@ -51,7 +51,7 @@ namespace GameShareManager.Controllers
                 _gameAppService.Add(game);
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View(game);
             }

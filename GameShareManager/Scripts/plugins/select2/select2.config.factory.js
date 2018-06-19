@@ -16,8 +16,7 @@ function createSelect2Configuration(placeholder, endpoint, propertyId, propertyT
                 };
             },
             processResults: function (data, params) {
-                params.page = params.page || 0;
-
+                params.page = params.page || 1;
                 var result = $.map(data.result,
                     function (obj) {
                         obj.id = obj.id || obj[propertyId];
