@@ -56,6 +56,9 @@
       <HintPath>..\packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -216,6 +219,7 @@
     <Compile Include="Helpers\CultureConstraint.cs" />
     <Compile Include="Helpers\CultureFilter.cs" />
     <Compile Include="Helpers\CultureHelper.cs" />
+    <Compile Include="Helpers\GlobalHandlerError.cs" />
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Helpers\RouteCollectionExtensions.cs" />
     <Compile Include="Models\AddPhoneNumberViewModel.cs" />
@@ -290,6 +294,12 @@
     <Content Include="fonts\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="fonts\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\companies.json" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
