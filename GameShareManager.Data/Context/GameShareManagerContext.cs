@@ -1,11 +1,8 @@
-﻿using System;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
-using System.Web;
 using GameShareManager.Data.Configurations;
 using GameShareManager.Domain.Entities;
-using Microsoft.AspNet.Identity;
 
 namespace GameShareManager.Data.Context
 {
@@ -38,10 +35,9 @@ namespace GameShareManager.Data.Context
 
         public override int SaveChanges()
         {
-            var userId = HttpContext.Current.User.Identity.GetUserId();
             foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().IsSubclassOf(typeof(Entity)) && entry.State == EntityState.Added))
             {
-                entry.Property("OwnerUserId").CurrentValue = userId;
+                entry.Property("OwnerUserId").CurrentValue = UserId;
             }
             return base.SaveChanges();
         }
