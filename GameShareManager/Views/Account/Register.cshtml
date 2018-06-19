@@ -27,15 +27,19 @@
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = Language.Name })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group">
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = Language.Email })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group">
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = Language.Password })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group">
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = Language.ConfirmPassword })
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                 </div>
 
                 <input type="submit" class="btn btn-primary block full-width m-b" value="@Language.CreateAccount">
