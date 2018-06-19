@@ -204,6 +204,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\FriendController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -261,6 +262,7 @@
     <Content Include="Content\patterns\shattered.png" />
     <Content Include="Content\patterns\triangular.png" />
     <Content Include="Content\plugins\dataTables\datatables.min.css" />
+    <Content Include="Content\plugins\select2\select2.min.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\font-awesome\css\fontawesome-all.min.css" />
@@ -304,6 +306,8 @@
     <Content Include="Scripts\plugins\dataTables\datatables.min.js" />
     <Content Include="Scripts\plugins\metisMenu\metisMenu.min.js" />
     <Content Include="Scripts\plugins\pace\pace.min.js" />
+    <Content Include="Scripts\plugins\select2\select2.config.factory.js" />
+    <Content Include="Scripts\plugins\select2\select2.full.min.js" />
     <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -350,6 +354,11 @@
     <Content Include="Views\Friend\Details.cshtml" />
     <Content Include="Views\Friend\Edit.cshtml" />
     <Content Include="Views\Friend\Index.cshtml" />
+    <Content Include="Views\Game\Create.cshtml" />
+    <Content Include="Views\Game\Delete.cshtml" />
+    <Content Include="Views\Game\Details.cshtml" />
+    <Content Include="Views\Game\Edit.cshtml" />
+    <Content Include="Views\Game\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

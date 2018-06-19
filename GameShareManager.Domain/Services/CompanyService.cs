@@ -10,10 +10,5 @@ namespace GameShareManager.Domain.Services
         public CompanyService(ICompanyRepository repository) : base(repository)
         {
         }
-
-        public override DataTableResult<Company> GetDataTableResultByFilter(CompanyFilter filter)
-        {
-           return Repository.GetByFilter(filter);
-        }
     }
 }

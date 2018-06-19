@@ -43,6 +43,7 @@
     <Compile Include="Filters\CompanyFilter.cs" />
     <Compile Include="Filters\DataTableResult.cs" />
     <Compile Include="Filters\Order.cs" />
+    <Compile Include="Filters\Select2ResultApp.cs" />
     <Compile Include="Interfaces\Repositories\IFriendRepository.cs" />
     <Compile Include="Interfaces\Repositories\IGameRepository.cs" />
     <Compile Include="Interfaces\Repositories\ICompanyRepository.cs" />

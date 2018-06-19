@@ -232,6 +232,33 @@ namespace GameShareManager.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game.
+        /// </summary>
+        public static string Game {
+            get {
+                return ResourceManager.GetString("Game", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game Details.
+        /// </summary>
+        public static string Game_Details {
+            get {
+                return ResourceManager.GetString("Game_Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Games.
+        /// </summary>
+        public static string Games {
+            get {
+                return ResourceManager.GetString("Games", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid code..
         /// </summary>
         public static string InvalidCodeError {
@@ -453,6 +480,15 @@ namespace GameShareManager.Resource {
         public static string RequiredFieldError {
             get {
                 return ResourceManager.GetString("RequiredFieldError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Company.
+        /// </summary>
+        public static string Select_Company {
+            get {
+                return ResourceManager.GetString("Select_Company", resourceCulture);
             }
         }
     }

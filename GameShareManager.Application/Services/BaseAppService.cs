@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using AutoMapper;
 using GameShareManager.Application.DataTables;
 using GameShareManager.Application.Interfaces;
+using GameShareManager.Application.Select2;
 using GameShareManager.Data.Interfaces;
 using GameShareManager.Domain.Entities;
 using GameShareManager.Domain.Filters;
@@ -69,6 +70,12 @@ namespace GameShareManager.Application.Services
         {
             var resultService = Service.GetDataTableResultByFilter(Mapper.Map<TFilter>(filter));
             return new DataTableResultApp<TViewModel>(resultService.draw, resultService.start, resultService.length, resultService.recordsTotal, Mapper.Map<List<TViewModel>>(resultService.data), resultService.recordsFiltered);
+        }
+
+        public Select2ResultApp<TViewModel> GetSelect2Filter(int page, string term)
+        {
+            var resultService = Service.GetSelect2Filter(page, term);
+            return new Select2ResultApp<TViewModel>(resultService.total_count,Mapper.Map<List<TViewModel>>(resultService.result));
         }
 
         public void Remove(TViewModel viewModel)

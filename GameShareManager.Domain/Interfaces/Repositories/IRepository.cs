@@ -38,5 +38,6 @@ namespace GameShareManager.Domain.Interfaces.Repositories
 
         IEnumerable<TEntity> GetAll();
         DataTableResult<TEntity> GetByFilter(TFilter filter);
+        Select2Result<TEntity> GetSelect2Filter(int page, string term);
     }
 }

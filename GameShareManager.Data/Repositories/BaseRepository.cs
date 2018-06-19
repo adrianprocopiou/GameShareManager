@@ -67,6 +67,7 @@ namespace GameShareManager.Data.Repositories
         }
 
         public abstract DataTableResult<TEntity> GetByFilter(TFilter filter);
+        public abstract Select2Result<TEntity> GetSelect2Filter(int page, string term);
 
         public void Dispose()
         {

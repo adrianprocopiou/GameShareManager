@@ -1,4 +1,5 @@
 ﻿using GameShareManager.Application.Filters;
+using GameShareManager.Application.Filters.DataTables;
 using GameShareManager.Application.Interfaces;
 using GameShareManager.Application.ViewModels;
 using GameShareManager.Data.Context;

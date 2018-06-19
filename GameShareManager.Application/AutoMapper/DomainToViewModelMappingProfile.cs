@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using GameShareManager.Application.Filters;
+using GameShareManager.Application.Filters.DataTables;
 using GameShareManager.Application.ViewModels;
 using GameShareManager.Domain.Entities;
 using GameShareManager.Domain.Filters;

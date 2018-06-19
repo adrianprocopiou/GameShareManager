@@ -10,10 +10,5 @@ namespace GameShareManager.Domain.Services
         public GameService(IGameRepository repository) : base(repository)
         {
         }
-
-        public override DataTableResult<Game> GetDataTableResultByFilter(GameFilter filter)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

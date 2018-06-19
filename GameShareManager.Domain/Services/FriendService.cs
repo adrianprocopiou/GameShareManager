@@ -10,11 +10,5 @@ namespace GameShareManager.Domain.Services
         public FriendService(IFriendRepository repository) : base(repository)
         {
         }
-
-
-        public override DataTableResult<Friend> GetDataTableResultByFilter(FriendFilter filter)
-        {
-            return Repository.GetByFilter(filter);
-        }
     }
 }

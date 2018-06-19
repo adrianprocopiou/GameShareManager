@@ -29,5 +29,17 @@ namespace GameShareManager.Data.Repositories
 
             return companies.ToDataTableResult(filter.draw,filter.start,filter.length);
         }
+
+        public override Select2Result<Company> GetSelect2Filter(int page, string term)
+        {
+            var companies = DbSet.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(term))
+                companies = companies.Where(x => x.Name.Trim().ToLower().Contains(term.Trim().ToLower()));
+
+            companies = companies.OrderBy(x => x.Name);
+
+            return companies.ToSelect2Result(page);
+        }
     }
 }

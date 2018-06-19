@@ -29,5 +29,17 @@ namespace GameShareManager.Data.Repositories
 
             return friends.ToDataTableResult(filter.draw, filter.start, filter.length);
         }
+
+        public override Select2Result<Friend> GetSelect2Filter(int page, string term)
+        {
+            var friends = DbSet.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(term))
+                friends = friends.Where(x => x.Name.Trim().ToLower().Contains(term.Trim().ToLower()));
+
+            friends = friends.OrderBy(x => x.Name);
+
+            return friends.ToSelect2Result(page);
+        }
     }
 }

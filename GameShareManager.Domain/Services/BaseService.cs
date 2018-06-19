@@ -36,7 +36,15 @@ namespace GameShareManager.Domain.Services
             return Repository.GetAll();
         }
 
-        public abstract DataTableResult<TEntity> GetDataTableResultByFilter(TFilter filter);
+        public DataTableResult<TEntity> GetDataTableResultByFilter(TFilter filter)
+        {
+            return Repository.GetByFilter(filter);
+        }
+
+        public Select2Result<TEntity> GetSelect2Filter(int page, string term)
+        {
+            return Repository.GetSelect2Filter(page, term);
+        }
 
 
         public TEntity Update(TEntity obj)

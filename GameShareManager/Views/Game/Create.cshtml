@@ -1,0 +1,70 @@
+﻿@model GameShareManager.Application.ViewModels.GameViewModel
+
+@{
+    ViewBag.Title = $"{Language.Create} {Language.Game}";
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@ViewBag.Title</h5>
+                </div>
+                @using (Html.BeginForm("Create", "Game", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="ibox-content">
+                        @Html.ValidationSummary()
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Name, new {@class = "control-label"})
+                                    @Html.TextBoxFor(x => x.Name, new {@class = "form-control", placeholder = Language.Name})
+                                    @Html.ValidationMessageFor(m => m.Name, "", new {@class = "text-danger"})
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.CompanyId, new {@class = "control-label"})
+                                    <select class="form-control" id="CompanyId" name="CompanyId">
+                                    </select>
+                                    @Html.ValidationMessageFor(m => m.CompanyId, "", new {@class = "text-danger"})
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="hr-line-dashed"></div>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.ActionLink(Language.Cancel, "Index", null, new {@class = "btn btn-default"})
+                                <input type="submit" class="btn btn-primary" value="@Language.Create">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/plugins/select2Styles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/select2")
+
+    <script>
+        $(document).ready(function() {
+            var config = createSelect2Configuration('@Language.Select_Company',
+                '@Url.Action("Select2", "Company")',
+                'Id',
+                'Name');
+
+            $("#CompanyId").select2(config);
+        });
+
+
+    </script>
+}

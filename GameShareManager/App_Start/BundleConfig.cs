@@ -55,6 +55,15 @@ namespace GameShareManager
                 "~/Scripts/plugins/dataTables/datatables.min.js",
                 "~/Scripts/plugins/dataTables/datatables.pt-BR.js",
                 "~/Scripts/plugins/dataTables/datatables.config.factory.js"));
+
+            // Select2 Styless
+            bundles.Add(new StyleBundle("~/plugins/select2Styles").Include(
+                "~/Content/plugins/select2/select2.min.css"));
+
+            // Select2
+            bundles.Add(new ScriptBundle("~/plugins/select2").Include(
+                "~/Scripts/plugins/select2/select2.full.min.js",
+                "~/Scripts/plugins/select2/select2.config.factory.js"));
         }
     }
 }

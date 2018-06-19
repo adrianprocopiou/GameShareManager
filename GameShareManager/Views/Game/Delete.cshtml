@@ -1,7 +1,7 @@
-﻿@model GameShareManager.Application.ViewModels.FriendViewModel
+﻿@model GameShareManager.Application.ViewModels.GameViewModel
 
 @{
-    ViewBag.Title = $"{Language.Delete} {Language.Friend}";
+    ViewBag.Title = $"{Language.Delete} {Language.Game}";
 }
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
@@ -13,28 +13,16 @@
 
                 <div class="ibox-content">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 @Html.LabelFor(m => m.Name, new { @class = "control-label" })
                                 @Html.TextBoxFor(x => x.Name, new { @class = "form-control", disabled = true })
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <div class="form-group">
-                                @Html.LabelFor(m => m.Nickname, new { @class = "control-label" })
-                                @Html.TextBoxFor(x => x.Nickname, new { @class = "form-control",  disabled = true })
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
-                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control",  disabled = true })
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
-                                @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", disabled = true })
+                                @Html.LabelFor(m => m.CompanyId, new { @class = "control-label" })
+                                @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control", disabled = "true"})
                             </div>
                         </div>
                     </div>
@@ -43,7 +31,7 @@
                             <div class="hr-line-dashed"></div>
                         </div>
                         <div class="col-md-12">
-                            @using (Html.BeginForm("Delete", "Friend", FormMethod.Post))
+                            @using (Html.BeginForm("Delete", "Game", FormMethod.Post))
                             {
                                 @Html.AntiForgeryToken()
                                 @Html.HiddenFor(m => m.Id)

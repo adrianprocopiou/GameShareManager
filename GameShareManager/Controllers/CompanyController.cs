@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using GameShareManager.Application.Filters;
+using GameShareManager.Application.Filters.DataTables;
 using GameShareManager.Application.Interfaces;
 using GameShareManager.Application.ViewModels;
 
@@ -24,6 +24,11 @@ namespace GameShareManager.Controllers
         public JsonResult DataTable(CompanyAppFilter appFilter)
         {
             return Json(_companyAppService.GetFilter(appFilter), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Select2(string term, int page = 0)
+        {
+            return Json(_companyAppService.GetSelect2Filter(page, term), JsonRequestBehavior.AllowGet);
         }
 
         // GET: Company/Details/5

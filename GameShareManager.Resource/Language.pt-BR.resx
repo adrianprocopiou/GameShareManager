@@ -249,4 +249,16 @@
   <data name="Options" xml:space="preserve">
     <value>Opções</value>
   </data>
+  <data name="Games" xml:space="preserve">
+    <value>Jogos</value>
+  </data>
+  <data name="Game" xml:space="preserve">
+    <value>Jogo</value>
+  </data>
+  <data name="Select_Company" xml:space="preserve">
+    <value>Selecione um Fabricante</value>
+  </data>
+  <data name="Game_Details" xml:space="preserve">
+    <value>Detalhes do Jogo</value>
+  </data>
 </root>

@@ -1,6 +1,6 @@
 ﻿using GameShareManager.Application.DataTables;
 
-namespace GameShareManager.Application.Filters
+namespace GameShareManager.Application.Filters.DataTables
 {
     public class FriendAppFilter : DataTableAjaxPostModel
     {

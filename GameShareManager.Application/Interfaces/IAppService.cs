@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameShareManager.Application.DataTables;
+using GameShareManager.Application.Select2;
 
 namespace GameShareManager.Application.Interfaces
 {
@@ -13,6 +14,7 @@ namespace GameShareManager.Application.Interfaces
         TViewModel Update(TViewModel viewModel);
         IEnumerable<TViewModel> GetAll();
         DataTableResultApp<TViewModel> GetFilter(TAppFilter filter);
+        Select2ResultApp<TViewModel> GetSelect2Filter(int page, string term);
         void Remove(TViewModel viewModel);
     }
 }

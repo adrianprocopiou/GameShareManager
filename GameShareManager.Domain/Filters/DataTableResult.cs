@@ -22,7 +22,7 @@ namespace GameShareManager.Domain.Filters
             this.length = length;
             this.recordsTotal = source.Count();
             this.data = source.Skip(start).Take(length).ToList();
-            this.recordsFiltered = source.Count();
+            this.recordsFiltered = recordsTotal;
         }
     }
 }
